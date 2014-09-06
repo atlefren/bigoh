@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/lib/ol.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="static/css/src/style.css"/>
+       <link rel="stylesheet" type="text/css" media="all" href="static/css/src/O.css"/>
+</head>
+<body>
+
+<div id="map"></div>
+
+
+<script type="text/javascript" src="static/js/lib/ol.js"></script>
+<script type="text/javascript" src="static/js/src/O.js"></script>
+<script type="text/javascript">
+(function () {
+    'use strict';
+    
+    var map = O.map('map').setView([51.505, -0.09], 13);
+    O.tileLayer(
+        'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+        {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }
+    ).addTo(map);
+    
+    O.marker([51.5, -0.09]).addTo(map);
+
+}());
+</script>
+
+</body>
+</html>
+
